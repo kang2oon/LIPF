@@ -1,0 +1,17 @@
+.fleft{float:left;}
+.fright{float:right;}
+
+.header{height:56px;padding:10px;vertical-align:middle;}
+.header a.side span:after{font-family:FontAwesome;content:'\f0c9';}
+.mm-wrapper_opened .header a.side span:after{content:'\f00d';}
+.content{height:100vh;}
+.main_jumbotron{background:#f5f5f5;height:calc(100% - 300px);}
+.mainmenu{height:120px;}
+.mainmenu2{height:90px;}
+.ep1{background:#e280a4;}
+.ep2{background:#fdd059;}
+.ep3{background:#7cc89c;}
+.ep4{background:#7dcbce;}
+.ep5{background:#88becd;}
+.ep6{background:#94b7de;}
+.ep7{background:#a6adce;}
