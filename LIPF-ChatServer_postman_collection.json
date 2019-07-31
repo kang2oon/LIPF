@@ -1,0 +1,1808 @@
+{
+	"info": {
+		"_postman_id": "be5f9f1e-751a-4ea1-81e9-26cd8c26536b",
+		"name": "LIPF-ChatServer-모바일 앱",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "공통",
+			"description": "",
+			"item": [
+				{
+					"name": "비밀번호 힌트 질문 목록",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"nicknm\":\"aaa\", \"pw\":\"1234\", \"telnum\" : \"12345678900\", \"pwHintQuery\":\"QUERY_01\",\"pwHintAnswer\":\"응답\"}"
+						},
+						"url": {
+							"raw": "{{host}}/itvApi/commonInfo/pwHintQuery",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"itvApi",
+								"commonInfo",
+								"pwHintQuery"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "URL 신고 유형 목록 조회",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"nicknm\":\"aaa\", \"pw\":\"1234\", \"telnum\" : \"12345678900\", \"pwHintQuery\":\"QUERY_01\",\"pwHintAnswer\":\"응답\"}"
+						},
+						"url": {
+							"raw": "{{host}}/itvApi/commonInfo/urlAlertType",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"itvApi",
+								"commonInfo",
+								"urlAlertType"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "상담 목록 조회",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"nicknm\":\"aaa\", \"pw\":\"1234\", \"telnum\" : \"12345678900\", \"pwHintQuery\":\"QUERY_01\",\"pwHintAnswer\":\"응답\"}"
+						},
+						"url": {
+							"raw": "{{host}}/itvApi/commonInfo/counselCategory",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"itvApi",
+								"commonInfo",
+								"counselCategory"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "chat",
+			"description": "",
+			"item": [
+				{
+					"name": "ChatRoom - 채팅방 생성",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8080/itvApi/itv/26/chatroom/createForMobileApp?counselCategoryId=0001",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"itvApi",
+								"itv",
+								"26",
+								"chatroom",
+								"createForMobileApp"
+							],
+							"query": [
+								{
+									"key": "counselCategoryId",
+									"value": "0001"
+								}
+							]
+						},
+						"description": "채팅방 생성\n"
+					},
+					"response": []
+				},
+				{
+					"name": "채팅방 목록",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "채팅방 정보",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "e7d7655f-e027-439b-a790-9f7baca977e3"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "{{host}}/itvApi/itv/0/chatroom/252",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"itvApi",
+								"itv",
+								"0",
+								"chatroom",
+								"252"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "채팅방별 대화목록",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "{{host}}/itvApi/itv/10001/chatroom/190/msgs/page?pageNum=0&pageSize=20&direction=desc&lastEvtDtm=0&lastMsgSeq=0",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"itvApi",
+								"itv",
+								"10001",
+								"chatroom",
+								"190",
+								"msgs",
+								"page"
+							],
+							"query": [
+								{
+									"key": "pageNum",
+									"value": "0"
+								},
+								{
+									"key": "pageSize",
+									"value": "20"
+								},
+								{
+									"key": "direction",
+									"value": "desc"
+								},
+								{
+									"key": "lastEvtDtm",
+									"value": "0"
+								},
+								{
+									"key": "lastMsgSeq",
+									"value": "0"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "채팅방별 대화목록 - lastEvtDtm & lastMsgSeq",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "채팅방별 대화목록 - lastEvtDtm",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "채팅방별 대화목록 - lastMsgSeq",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "채팅방별 대화 카운트",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "채팅방별 대화방 삭제",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "채팅방별 상담요청",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "{{host}}/itvApi/itv/2031/chatroom/252/counselRequest?longitude=23.123&latitude=12.345",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"itvApi",
+								"itv",
+								"2031",
+								"chatroom",
+								"252",
+								"counselRequest"
+							],
+							"query": [
+								{
+									"key": "longitude",
+									"value": "23.123"
+								},
+								{
+									"key": "latitude",
+									"value": "12.345"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "채팅방별 위치정보 갱신",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "{{host}}/itvApi/itv/2031/chatroom/252/updateGps?longitude=23.1234&latitude=12.3456",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"itvApi",
+								"itv",
+								"2031",
+								"chatroom",
+								"252",
+								"updateGps"
+							],
+							"query": [
+								{
+									"key": "longitude",
+									"value": "23.1234"
+								},
+								{
+									"key": "latitude",
+									"value": "12.3456"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "채팅방 나가기 (UI전환)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "{{host}}/itvApi/itv/0/chatroom/153/chatOut",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"itvApi",
+								"itv",
+								"0",
+								"chatroom",
+								"153",
+								"chatOut"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "채팅방 들어가기 (UI전환)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "member&session",
+			"description": "",
+			"item": [
+				{
+					"name": "회원 생성",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"nicknm\":\"aaab\", \"pw\":\"1234\", \"telnum\" : \"12345678904\", \"pwHintQuery\":\"QUERY_01\",\"pwHintAnswer\":\"응답\"}"
+						},
+						"url": {
+							"raw": "{{host}}/itvApi/account/create",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"itvApi",
+								"account",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "회원 정보 수정",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"interviewerSeq\": 38,\n   \"pwHintQuery\":\"QUERY_03\",\n   \"pwHintAnswer\":\"아프리카5\",\n   \"pw\":\"1234\"\n   \n}"
+						},
+						"url": {
+							"raw": "{{host}}/itvApi/account/38",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"itvApi",
+								"account",
+								"38"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "1234abc",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "12345678904",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "",
+								"value": "",
+								"disabled": true
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "{{host}}/itvApi/auth/login",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"itvApi",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "logout",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eed5ee93-e4bf-4e50-825b-00deb7c7c9cb"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "{{host}}/itvApi/auth/logout",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"itvApi",
+								"auth",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "회원 정보 조회",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "x-auth-token",
+								"value": "{{token}}",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"nicknm\":\"aaa\", \"pw\":\"1234\", \"sex\":\"1\", \"telnum\" : \"1234567890\"}"
+						},
+						"url": {
+							"raw": "{{host}}/itvApi/account/1",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"itvApi",
+								"account",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "전화번호 중복 체크",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"nicknm\":\"aaa\", \"pw\":\"1234\", \"telnum\" : \"12345678900\", \"pwHintQuery\":\"QUERY_01\",\"pwHintAnswer\":\"응답\"}"
+						},
+						"url": {
+							"raw": "{{host}}/itvApi/account/check/telnum/1234567",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"itvApi",
+								"account",
+								"check",
+								"telnum",
+								"1234567"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "닉네임 중복 체크",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "",
+								"value": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"nicknm\":\"aaa\", \"pw\":\"1234\", \"telnum\" : \"12345678900\", \"pwHintQuery\":\"QUERY_01\",\"pwHintAnswer\":\"응답\"}"
+						},
+						"url": {
+							"raw": "http://lab.miraejigi.com:20002/itvApi/account/check/nicknm/aaa",
+							"protocol": "http",
+							"host": [
+								"lab",
+								"miraejigi",
+								"com"
+							],
+							"port": "20002",
+							"path": [
+								"itvApi",
+								"account",
+								"check",
+								"nicknm",
+								"aaa"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "회원 정보 수정 - 비밀번호",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"interviewerSeq\":\"120\",\"pw\":\"1234abc\"}"
+						},
+						"url": {
+							"raw": "{{host}}/itvApi/account/120",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"itvApi",
+								"account",
+								"120"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "비밀번호 힌트 확인",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"telnum\":\"12345678\", \"pwHintQuery\":\"QUERY_01\", \"pwHintAnswer\":\"응a답\"}"
+						},
+						"url": {
+							"raw": "{{host}}/itvApi/account/check/pwHint",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"itvApi",
+								"account",
+								"check",
+								"pwHint"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "chatFile",
+			"description": "",
+			"item": [
+				{
+					"name": "채팅 파일 업로드",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "image/jpeg"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "FILE01",
+									"description": "",
+									"type": "file"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{host}}/itvApi/itv/0/chatroom/153/file",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"itvApi",
+								"itv",
+								"0",
+								"chatroom",
+								"153",
+								"file"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "채팅 파일 다운로드",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "{{host}}/itvApi/itv/0/chatroom/153/file/13",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"itvApi",
+								"itv",
+								"0",
+								"chatroom",
+								"153",
+								"file",
+								"13"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "만족도 설문",
+			"description": "",
+			"item": [
+				{
+					"name": "내담자 별 만족도 설문 목록 조회",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "{{host}}/itvApi/itv/1/survay/list",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"itvApi",
+								"itv",
+								"1",
+								"survay",
+								"list"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "설문지 정보 조회",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "{{host}}/itvApi/itv/1/survay/1",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"itvApi",
+								"itv",
+								"1",
+								"survay",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "설문지 응답",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"interviewerSeq\": 1,\n    \"srvyprSeq\": 1,\n    \"publishDtm\": 1523856724000, \n    \"questions\": [\n        {\n            \"srvyprSeq\": 1,\n            \"srvQuestionNum\": 2,\n            \"response\": 2\n        },\n        {\n            \"srvyprSeq\": 1,\n            \"srvQuestionNum\": 6,\n            \"response\": 1\n        }\n    ]\n}"
+						},
+						"url": {
+							"raw": "{{host}}/itvApi/itv/1/survay/1/response",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"itvApi",
+								"itv",
+								"1",
+								"survay",
+								"1",
+								"response"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "심리 테스트",
+			"description": "",
+			"item": [
+				{
+					"name": "심리테스트 목록 조회",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "{{host}}/itvApi/itv/1/pshchTest/list",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"itvApi",
+								"itv",
+								"1",
+								"pshchTest",
+								"list"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "심리평가 조회",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "{{host}}/itvApi/itv/1/pshchTest/1",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"itvApi",
+								"itv",
+								"1",
+								"pshchTest",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "심리평가 응답",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"psychTestSeq\": 1,\n    \"srvyprTitle\": \"심리검사 참여내역 테스트\",\n    \"useFg\": \"1\",\n    \"delFg\": \"0\",\n    \"regDtm\": 1527471933000,\n    \"regId\": \"dev\",\n    \"uptDtm\": 1527471943000,\n    \"uptId\": \"dev\",\n    \"questions\": [\n        {\n            \"psychTestSeq\": 1,\n            \"psychTestQuestionNum\": 1,\n            \"objtstQuestionCnt\": 5,\n            \"slctAbleQuestionCnt\": 1,\n            \"questionDes\": \"심리검사 항목 테스트\",\n            \"response\": 1,\n            \"weigh\": 1,\n            \"slct1\": \"1\",\n            \"slct2\": \"2\",\n            \"slct3\": \"3\",\n            \"slct4\": \"4\",\n            \"slct5\": \"5\"\n        }\n    ]\n}"
+						},
+						"url": {
+							"raw": "{{host}}/itvApi/itv/1/pshchTest/1/response",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"itvApi",
+								"itv",
+								"1",
+								"pshchTest",
+								"1",
+								"response"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "storyBoard",
+			"description": "",
+			"item": [
+				{
+					"name": "금칙어 목록 - noAuth",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "{{host}}/itvApi/itv/noAuth/storyBoard/banWords",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"itvApi",
+								"itv",
+								"noAuth",
+								"storyBoard",
+								"banWords"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "사연 목록 - 시간순, 카테고리 지정",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "{{host}}/itvApi/itv/1/storyBoard/list?counselCategoryId=01000",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"itvApi",
+								"itv",
+								"1",
+								"storyBoard",
+								"list"
+							],
+							"query": [
+								{
+									"key": "counselCategoryId",
+									"value": "01000"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "사연 목록 - 댓글 많은 순",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "{{host}}/itvApi/itv/1/storyBoard/list?sortType=replyCnt",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"itvApi",
+								"itv",
+								"1",
+								"storyBoard",
+								"list"
+							],
+							"query": [
+								{
+									"key": "sortType",
+									"value": "replyCnt"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "사연 목록 - 좋아요 많은 순",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "{{host}}/itvApi/itv/1/storyBoard/list?sortType=recmdCnt",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"itvApi",
+								"itv",
+								"1",
+								"storyBoard",
+								"list"
+							],
+							"query": [
+								{
+									"key": "sortType",
+									"value": "recmdCnt"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "사연 목록 - 로그아웃 상태",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "{{host}}/itvApi/itv/noAuth/storyBoard/list?counselCategoryId=01000",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"itvApi",
+								"itv",
+								"noAuth",
+								"storyBoard",
+								"list"
+							],
+							"query": [
+								{
+									"key": "counselCategoryId",
+									"value": "01000"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "사연 작성 - 금칙어 포함",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"boardTitle\": \"사연 테스트222  aaa\",\n    \"boardDes\": \"내담자 금지어1  사연 테스트222\"\n}"
+						},
+						"url": {
+							"raw": "{{host}}/itvApi/itv/1/storyBoard/write?counselCategoryId=02000",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"itvApi",
+								"itv",
+								"1",
+								"storyBoard",
+								"write"
+							],
+							"query": [
+								{
+									"key": "counselCategoryId",
+									"value": "02000"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "사연 작성 - 금칙어 미포함",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"boardTitle\": \"사연 테스트222  aaa\",\n    \"boardDes\": \"내담자 사연 테스트222\"\n}"
+						},
+						"url": {
+							"raw": "{{host}}/itvApi/itv/1/storyBoard/write?counselCategoryId=02000",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"itvApi",
+								"itv",
+								"1",
+								"storyBoard",
+								"write"
+							],
+							"query": [
+								{
+									"key": "counselCategoryId",
+									"value": "02000"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "사연 조회",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "{{host}}/itvApi/itv/1/storyBoard/28",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"itvApi",
+								"itv",
+								"1",
+								"storyBoard",
+								"28"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "사연 조회 - 로그아웃 상태",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "{{host}}/itvApi/itv/noAuth/storyBoard/26",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"itvApi",
+								"itv",
+								"noAuth",
+								"storyBoard",
+								"26"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "첨부 파일 download - 사연에는 첨부 파일 없",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "{{host}}/itvApi/itv/1/storyBoard/55/file/101",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"itvApi",
+								"itv",
+								"1",
+								"storyBoard",
+								"55",
+								"file",
+								"101"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "사연 삭제",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "{{host}}/itvApi/itv/1/storyBoard/66",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"itvApi",
+								"itv",
+								"1",
+								"storyBoard",
+								"66"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "사연 수정",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\n    \"boardTitle\": \"사연 테스트 수정 67\",\n    \"boardDes\": \"내담자 사연 테스트 수정 67\"\n\n}"
+						},
+						"url": {
+							"raw": "{{host}}/itvApi/itv/1/storyBoard/67",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"itvApi",
+								"itv",
+								"1",
+								"storyBoard",
+								"67"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "사연에 대한 공감 수 조회",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "{{host}}/itvApi/itv/1/storyBoard/29/likeCount",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"itvApi",
+								"itv",
+								"1",
+								"storyBoard",
+								"29",
+								"likeCount"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "사연 공감 - 좋아요, 추천",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "{{host}}/itvApi/itv/1/storyBoard/69/like",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"itvApi",
+								"itv",
+								"1",
+								"storyBoard",
+								"69",
+								"like"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "사연 공감 삭제",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "{{host}}/itvApi/itv/2/storyBoard/29/like",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"itvApi",
+								"itv",
+								"2",
+								"storyBoard",
+								"29",
+								"like"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "사연 댓글 목록 조회",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "{{host}}/itvApi/itv/1/storyBoard/29/replyList",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"itvApi",
+								"itv",
+								"1",
+								"storyBoard",
+								"29",
+								"replyList"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "사연 댓글 조회",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "{{host}}/itvApi/itv/1/storyBoard/29/reply/15",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"itvApi",
+								"itv",
+								"1",
+								"storyBoard",
+								"29",
+								"reply",
+								"15"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "사연 댓글 삭제",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "{{host}}/itvApi/itv/1/storyBoard/15/reply/6",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"itvApi",
+								"itv",
+								"1",
+								"storyBoard",
+								"15",
+								"reply",
+								"6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "사연 댓글 작성",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"replyDes\": \"댓글 수정 테스트6  금지 어2@ \"\n}"
+						},
+						"url": {
+							"raw": "{{host}}/itvApi/itv/1/storyBoard/28/reply",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"itvApi",
+								"itv",
+								"1",
+								"storyBoard",
+								"28",
+								"reply"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "사연 댓글 수정",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\n        \"replyDes\": \"댓글 수정 테스트11-2\"\n    }"
+						},
+						"url": {
+							"raw": "{{host}}/itvApi/itv/1/storyBoard/15/reply/13",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"itvApi",
+								"itv",
+								"1",
+								"storyBoard",
+								"15",
+								"reply",
+								"13"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "내담자의 작성 사연 목록",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\n        \"replyDes\": \"댓글 수정 테스트6\",\n        \"regIdNm\": \"개발자\"\n        \n    }"
+						},
+						"url": {
+							"raw": "{{host}}/itvApi/itv/1/storyBoard/myBoardList",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"itvApi",
+								"itv",
+								"1",
+								"storyBoard",
+								"myBoardList"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "내담자의 공감 목록",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\n        \"replyDes\": \"댓글 수정 테스트6\",\n        \"regIdNm\": \"개발자\"\n        \n    }"
+						},
+						"url": {
+							"raw": "{{host}}/itvApi/itv/1/storyBoard/myLikeList",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"itvApi",
+								"itv",
+								"1",
+								"storyBoard",
+								"myLikeList"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "내담자의 작성 댓글 목록",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\n        \"replyDes\": \"댓글 수정 테스트6\",\n        \"regIdNm\": \"개발자\"\n        \n    }"
+						},
+						"url": {
+							"raw": "{{host}}/itvApi/itv/1/storyBoard/myReplyList",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"itvApi",
+								"itv",
+								"1",
+								"storyBoard",
+								"myReplyList"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "내담자의 알림 목록",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\n        \"replyDes\": \"댓글 수정 테스트6\",\n        \"regIdNm\": \"개발자\"\n        \n    }"
+						},
+						"url": {
+							"raw": "{{host}}/itvApi/itv/1/newsList",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"itvApi",
+								"itv",
+								"1",
+								"newsList"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "내담자의 알림 조회",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\n        \"replyDes\": \"댓글 수정 테스트6\",\n        \"regIdNm\": \"개발자\"\n        \n    }"
+						},
+						"url": {
+							"raw": "{{host}}/itvApi/itv/1/news/16",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"itvApi",
+								"itv",
+								"1",
+								"news",
+								"16"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "내담자의 활동 목록",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\n        \"replyDes\": \"댓글 수정 테스트6\",\n        \"regIdNm\": \"개발자\"\n        \n    }"
+						},
+						"url": {
+							"raw": "{{host}}/itvApi/itv/1/actionList",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"itvApi",
+								"itv",
+								"1",
+								"actionList"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "신고",
+			"description": "",
+			"item": [
+				{
+					"name": "신고 목록",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "{{host}}/itvApi/itv/1/urlAlert/list",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"itvApi",
+								"itv",
+								"1",
+								"urlAlert",
+								"list"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "신고 조회",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"interviewerSeq\": 1,\n    \"alertReason\": \"사유 222 e\",\n    \"alertUrl\": \"http://aaabbb \",\n    \"alertDes\": \"상세 설 명   bb\"\n}"
+						},
+						"url": {
+							"raw": "{{host}}/itvApi/itv/1/urlAlert/6",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"itvApi",
+								"itv",
+								"1",
+								"urlAlert",
+								"6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "신고 작성",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"interviewerSeq\": 1,\n    \"alertReason\": \"사유\",\n    \"alertUrl\": \"http://aaa\",\n    \"alertDes\": \"상세 설명\"\n}"
+						},
+						"url": {
+							"raw": "{{host}}/itvApi/itv/1/urlAlert/write",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"itvApi",
+								"itv",
+								"1",
+								"urlAlert",
+								"write"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "신고 파일 업로드",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "urlAlertFile",
+									"description": "",
+									"type": "file"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{host}}/itvApi/itv/1/urlAlert/7/file",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"itvApi",
+								"itv",
+								"1",
+								"urlAlert",
+								"7",
+								"file"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "신고 파일 다운로드",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "urlAlertFile",
+									"description": "",
+									"type": "file"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{host}}/itvApi/itv/1/urlAlert/7/file",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"itvApi",
+								"itv",
+								"1",
+								"urlAlert",
+								"7",
+								"file"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "신고 수",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"interviewerSeq\": 1,\n    \"alertReason\": \"사유 222 e\",\n    \"alertUrl\": \"http://aaabbb \",\n    \"alertDes\": \"상세 설 명   bb\"\n}"
+						},
+						"url": {
+							"raw": "{{host}}/itvApi/itv/1/urlAlert/6",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"itvApi",
+								"itv",
+								"1",
+								"urlAlert",
+								"6"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

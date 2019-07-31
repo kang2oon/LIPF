@@ -1,0 +1,173 @@
+body {
+    font-size: 11px;
+}
+ul {
+    list-style: none;
+    margin:0;
+    padding:0;
+}
+
+.counselling-wrap .message-wrap {
+    width: 500px;
+    margin: 0 auto;
+  }
+  .counselling-wrap .message-wrap .counselor-message-wrap {
+    width: 100%;
+    float: left;
+    box-sizing: border-box;
+  }
+  .counselling-wrap .message-wrap .counselor-message-wrap .message-list-title {
+    background-color: #5fbeaa;
+  }
+  .counselling-wrap .message-wrap .supervisor-message-wrap {
+    width: 0%;
+    float: left;
+    box-sizing: border-box;
+    overflow: hidden;
+  }
+  .counselling-wrap .message-wrap .supervisor-message-wrap .message-list-title {
+    background-color: #5d9cec;
+  }
+  .counselling-wrap .message-wrap .message-list-title {
+    height: 0px;
+    line-height: 0px;
+    overflow: hidden;
+    text-align: center;
+    color: #ffffff;
+  }
+  .counselling-wrap .message-wrap .message-list {
+    border: 1px solid #dee2e6;
+    padding: 5px;
+    height: 540px;
+    overflow-y: auto;
+    transition: all 0.2s ease-out;
+    -o-transition: all 0.2s ease-out;
+    -ms-transition: all 0.2s ease-out;
+    -moz-transition: all 0.2s ease-out;
+    -webkit-transition: all 0.2s ease-out;
+  }
+  .counselling-wrap .message-wrap .message-list li {
+    margin: 5px 0;
+  }
+  .counselling-wrap .message-wrap .message-list li:AFTER {
+    content: " ";
+    display: block;
+    clear: both;
+  }
+  .counselling-wrap .message-wrap .message-list .message-item .message-holder {
+    float: left;
+    max-width: 400px;
+    max-width: 70%;
+  }
+  .counselling-wrap .message-wrap .message-list .message-item .message-holder .time {
+    padding: 0 10px;
+  }
+  .counselling-wrap .message-wrap .message-list .message-item .message {
+    padding: 10px;
+    margin-top: 3px;
+    border-radius: 5px;
+    color: #ffffff;
+    background-color: #5fbeaa;
+  }
+  .counselling-wrap .message-wrap .message-list .message-item.left .profile {
+    text-align: center;
+    float: left;
+    font-weight: bold;
+  }
+  .counselling-wrap .message-wrap .message-list .message-item.left .message-holder {
+    position: relative;
+  }
+  .counselling-wrap .message-wrap .message-list .message-item.left .message-holder .message {
+    margin-left: 10px;
+  }
+  .counselling-wrap .message-wrap .message-list .message-item.left .message-holder:after {
+    content: " ";
+    position: absolute;
+    top: 30px;
+    left: 0px;
+    border: 5px solid transparent;
+    border-right-color: #5fbeaa;
+  }
+  .counselling-wrap .message-wrap .message-list .message-item.right .profile {
+    text-align: center;
+    float: right;
+    font-weight: bold;
+  }
+  .counselling-wrap .message-wrap .message-list .message-item.right .message-holder {
+    float: right;
+    position: relative;
+  }
+  .counselling-wrap .message-wrap .message-list .message-item.right .message-holder .message {
+    margin-right: 10px;
+    background-color: #e9ecef;
+    color: #6d6e71;
+  }
+  .counselling-wrap .message-wrap .message-list .message-item.right .message-holder .time {
+    text-align: right;
+  }
+  .counselling-wrap .message-wrap .message-list .message-item.right .message-holder:after {
+    content: " ";
+    position: absolute;
+    top: 30px;
+    right: 0px;
+    border: 5px solid transparent;
+    border-left-color: #e9ecef;
+  }
+  .counselling-wrap .message-wrap .message-list .message-item.center {
+    text-align: center;
+  }
+  .counselling-wrap .message-wrap .message-list .message-item.center .profile {
+    display: none;
+  }
+  .counselling-wrap .message-wrap .message-list .message-item.center .message-holder {
+    float: none;
+    max-width: none;
+    width: auto;
+    padding: 3px;
+    background-color: #f4f4f4;
+  }
+  .counselling-wrap .message-wrap .message-list .message-item.center .message-holder .time {
+    display: none;
+  }
+  .counselling-wrap .message-wrap .message-list .message-item.center .message-holder .message {
+    padding: 0;
+    color: #6d6e71;
+  }
+  .counselling-wrap .message-wrap .message-list .message-item.interviewer .message-holder:AFTER {
+    
+  }
+  .counselling-wrap .message-wrap .message-list .message-item.interviewer .message {
+    background-color: #5fbeaa;
+  }
+  .counselling-wrap .message-wrap .message-list .message-item.supervisor .message-holder:AFTER {
+    border-right-color: #5d9cec;
+  }
+  .counselling-wrap .message-wrap .message-list .message-item.supervisor .message {
+    background-color: #5d9cec;
+  }
+  .counselling-wrap .message-wrap .message-input-wrap {
+    margin-top: 10px;
+  }
+  .counselling-wrap .message-wrap .message-input-wrap textarea {
+    width: calc(100% - 58px);;
+    border: 1px solid #dee2e6;
+    height: 35px;
+    padding: 3px;
+    box-sizing: border-box;
+    text-align: left;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 1rem;
+    display: inline-block;
+    vertical-align: top;
+  }
+  .counselling-wrap .message-wrap .message-input-wrap .btn-send {
+    display: inline;
+    display: inline-block;
+    width: 54px;
+    height: 35px;
+    line-height: 35px;
+    text-align: center;
+    vertical-align: top;
+    background-color: #5fbeaa;
+    color: #ffffff;
+  }
